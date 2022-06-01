@@ -1,0 +1,26 @@
+.courses-container{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  overflow-y: scroll;
+  padding-bottom: 2rem;
+  width: 90vw;
+}
+
+.dashboard-container{
+  background-color: #FFEBCD;
+  border-radius: 8px;
+  box-shadow: 2px 12px 20px 0px #4e4646;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+}
+
+.test{
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  width: 100vw;
+}

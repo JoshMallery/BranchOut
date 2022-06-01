@@ -1,0 +1,11 @@
+.course-card{
+  background-color: #F4F4F4;
+  border-radius: 8px;
+  box-shadow: 2px 12px 20px 0px #4e4646;
+  width: 90%;
+  margin-top: 1.5rem;
+}
+
+.course-card:hover{
+  cursor: pointer;
+}

@@ -1,0 +1,18 @@
+.nav-bar{
+  background-color: #8EB0FF;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.logo{
+  height: 17vh;
+  margin-left: 1vw;
+}
+
+.navBar-link{
+  margin-right: 1vw;
+  width: 20vw;
+  display: flex;
+  justify-content: space-around;
+}

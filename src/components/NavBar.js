@@ -2,11 +2,12 @@ import React from 'react';
 import '../CSS/NavBar.css';
 import { NavLink } from 'react-router-dom';
 
+
 const NavBar = () => {
   return (
     <div className='nav-bar'>
-      <img src={require('../images/branchOut-logo.png')}/>
-      <div>
+      <img className="logo" src={require('../images/official-logo.png')}/>
+      <div className="navBar-link">
         <NavLink exact to="/">
           Home
          </NavLink>
@@ -14,7 +15,6 @@ const NavBar = () => {
            Add New Course
           </NavLink>
       </div>
-      <p>NavBar</p>
     </div>
   )
 }
