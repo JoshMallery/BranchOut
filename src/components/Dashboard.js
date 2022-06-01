@@ -4,6 +4,7 @@ import CourseCard from './CourseCard'
 
 const Dashboard = () => {
   return (
+    <div className="test">
     <section className="dashboard-container">
       <h2>Dashboard</h2>
       <section className="courses-container">
@@ -18,6 +19,7 @@ const Dashboard = () => {
         <CourseCard />
       </section>
     </section>
+    </div>
   )
 }
 export default Dashboard;
