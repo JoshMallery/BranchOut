@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Dashboard from './components/Dashboard';
+import Form from './components/Form';
 
 
 class App extends Component {
@@ -15,7 +16,12 @@ render() {
   return (
     <main className='App'>
       <NavBar />
-      <Dashboard />
+      <Switch>
+        <Route exact path="/" render={ () => <Dashboard /> }
+        />
+        <Route path="/form" render={ () => <Form /> }
+        />
+      </Switch>
     <h1>I'm working here!</h1>
     </main>
   )
