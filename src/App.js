@@ -4,12 +4,19 @@ import { Route, Switch } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Dashboard from './components/Dashboard';
 import Form from './components/Form';
-
+import {apiCalls} from './apiCalls/apiCalls'
 
 class App extends Component {
   constructor() {
     super();
+    this.state = {
+      courses:[],
+    }
+  }
 
+  componentDidMount = () => {
+    apiCalls.getCourses()
+    .then(res => this.setState({courses: res}))
   }
 
 render() {
