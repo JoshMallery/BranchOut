@@ -1,9 +1,23 @@
 import React from 'react';
 import '../CSS/Dashboard.css';
+import CourseCard from './CourseCard'
 
 const Dashboard = () => {
   return (
-    <p>Dashboard</p>
+    <section className="dashboard-container">
+      <h2>Dashboard</h2>
+      <section className="courses-container">
+        <CourseCard />
+        <CourseCard />
+        <CourseCard />
+        <CourseCard />
+        <CourseCard />
+        <CourseCard />
+        <CourseCard />
+        <CourseCard />
+        <CourseCard />
+      </section>
+    </section>
   )
 }
 export default Dashboard;

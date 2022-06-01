@@ -14,7 +14,6 @@ const NavBar = () => {
            Add New Course
           </NavLink>
       </div>
-      <p>NavBar</p>
     </div>
   )
 }

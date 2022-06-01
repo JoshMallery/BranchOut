@@ -22,7 +22,6 @@ render() {
         <Route path="/form" render={ () => <Form /> }
         />
       </Switch>
-    <h1>I'm working here!</h1>
     </main>
   )
 }
