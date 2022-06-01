@@ -23,8 +23,9 @@ render() {
   return (
     <main className='App'>
       <NavBar />
+
       <Switch>
-        <Route exact path="/" render={ () => <Dashboard /> }
+        <Route exact path="/" render={ () => !this.state.courses.length ? <h2>Loading</h2> : <Dashboard courses={this.state.courses}/> }
         />
         <Route path="/form" render={ () => <Form /> }
         />
