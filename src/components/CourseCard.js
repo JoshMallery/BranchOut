@@ -1,16 +1,14 @@
 import React from 'react';
 import '../CSS/CourseCard.css';
 
-const CourseCard = () => {
-
+const CourseCard = ({author, title, overview, lessons}) => {
+console.log(lessons)
   return (
     <div className="course-card">
-      <p>Title</p>
-      <p>By: <span>Author</span></p>
-      <p>I am a random overview I am a random overview
-        I am a random overview I am a random overview
-      </p>
-      <p><span>4</span>lessons</p>
+      <p>{title}</p>
+      <p>By: <span>{author}</span></p>
+      <p>{overview}</p>
+      <p><span>{lessons.length} </span>{lessons.length > 1 ? "lessons" : "lesson"}</p>
     </div>
   )
 }
