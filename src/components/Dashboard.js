@@ -7,7 +7,7 @@ const Dashboard = ({courses}) => {
   const allCourses = courses.map(course => {
 
     return(
-      <NavLink className="course-card" to={`/course${course.courses_id}`} key={course.courses_id}>
+      <NavLink className="course-card" to={`/course-${course.title.split(" ").join("-")}`} key={course.courses_id}>
         <CourseCard {...course}/>
       </NavLink>
     )
