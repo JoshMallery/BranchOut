@@ -3,8 +3,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Dashboard from './components/Dashboard';
-import Course from "./components/Course";
-import Lessons from "./components/Lessons";
+import CourseContainer from "./components/CourseContainer";
 import Form from './components/Form';
 import {apiCalls} from './apiCalls/apiCalls'
 
@@ -23,8 +22,7 @@ class App extends Component {
 
   displayCourse = (match) => {
     const courseName = match.params.course.split("-").join(" ");
-    const matchedCourse = this.state.courses.find(course => course.title === courseName);
-    return matchedCourse
+    return this.state.courses.find(course => course.title === courseName);
   }
 
 render() {
@@ -40,8 +38,7 @@ render() {
         <Route path="/:course" render={({ match }) => {
           return(
             <div>
-              <Course {...this.displayCourse(match)} />
-              <Lessons {...this.displayCourse(match)} />
+              <CourseContainer {...this.displayCourse(match)} />
             </div>
             )
           }
