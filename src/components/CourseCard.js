@@ -4,7 +4,7 @@ import '../CSS/CourseCard.css';
 const CourseCard = ({author, title, overview, lessons}) => {
 console.log(lessons)
   return (
-    <div className="course-card">
+    <div>
       <p>{title}</p>
       <p>By: <span>{author}</span></p>
       <p>{overview}</p>

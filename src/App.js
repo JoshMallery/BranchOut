@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Dashboard from './components/Dashboard';
+import CourseContainer from "./components/CourseContainer";
 import Form from './components/Form';
 import {apiCalls} from './apiCalls/apiCalls'
 
@@ -19,6 +20,11 @@ class App extends Component {
     .then(res => this.setState({courses: res}))
   }
 
+  displayCourse = (match) => {
+    const courseName = match.params.course.split("-").join(" ");
+    return this.state.courses.find(course => course.title === courseName);
+  }
+
 render() {
   return (
     <main className='App'>
@@ -28,6 +34,15 @@ render() {
         <Route exact path="/" render={ () => !this.state.courses.length ? <h2>Loading</h2> : <Dashboard courses={this.state.courses}/> }
         />
         <Route path="/form" render={ () => <Form /> }
+        />
+        <Route path="/:course" render={({ match }) => {
+          return(
+            <div>
+              <CourseContainer {...this.displayCourse(match)} />
+            </div>
+            )
+          }
+        }
         />
       </Switch>
     </main>
