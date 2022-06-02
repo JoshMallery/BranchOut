@@ -1,11 +1,15 @@
 import React from 'react';
 import '../CSS/Dashboard.css';
+import { NavLink } from 'react-router-dom';
 import CourseCard from './CourseCard'
 
 const Dashboard = ({courses}) => {
   const allCourses = courses.map(course => {
+
     return(
-      <CourseCard {...course}/>
+      <NavLink className="course-card" to={`/course${course.courses_id}`} key={course.courses_id}>
+        <CourseCard {...course}/>
+      </NavLink>
     )
   })
   return (
