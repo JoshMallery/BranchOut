@@ -1,0 +1,15 @@
+.course-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid blue;
+
+}
+
+.course-content {
+  display: flex;
+  justify-content: space-around;
+  border: 3px solid red;
+  width: 100vw;
+  height: 80vh;
+}

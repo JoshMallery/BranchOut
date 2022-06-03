@@ -9,25 +9,41 @@ class CourseContainer extends Component {
     this.state = {
       lessons: [],
       courseContent: "",
-      title: ""
+      title: "",
+      selectedLessonTitle: "",
+      selectedLesson: ""
     }
   }
 
+
 componentDidMount = () => {
-  this.setState({lessons:this.props.lessons, courseContent: this.props.overview, title: this.props.title})
+const {title, author, overview, lessons, course_id} = this.props
+  this.setState({lessons:lessons, courseContent:overview, title:title})
+}
+
+selectLesson = (lessonTitle, lessonContent) => {
+  this.setState({selectedLessonTitle: lessonTitle, selectedLesson:lessonContent})
 }
 
   render() {
+    const {title, author, overview, lessons, course_id} = this.props
     return(
-      <div>
-        I'm the Course Container Friends!
-        <CourseContent />
-        <Lessons />
+      <div className='course-container'>
+        {title}
+        <div className='course-content'>
+          {this.state.selectedLesson === "" ? <h2>{overview} Please Pick a Lesson to Start Your Learning Journey!</h2>:<CourseContent
+            overview={overview}
+            selectedLesson={this.state.selectedLesson}
+            selectedLessonTitle={this.state.selectedLessonTitle}
+            />}
+          <Lessons
+            lessons={lessons}
+            selectLesson={this.selectLesson}
+          />
+        </div>
       </div>
     )
   }
-
-
 }
 
 export default CourseContainer;
