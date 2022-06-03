@@ -1,11 +1,21 @@
 import React from "react";
 import "../CSS/Lessons.css";
+import LessonCard from './LessonCard'
 
-const Lessons = () => {
-
+const Lessons = ({ lessons, selectLesson }) => {
+  console.log("HERE", lessons);
+  const lessonComponents = lessons.map(lesson => {
+    return (
+      <LessonCard {...lesson}
+        key={lesson.id}
+        selectLesson={selectLesson}
+      />
+    )
+  })
   return(
-    <div>
-      I'm the best lesson you ever seen pal.
+
+    <div className='lessonContainer'>
+    {lessonComponents}
     </div>
   )
 
