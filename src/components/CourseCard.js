@@ -2,7 +2,6 @@ import React from 'react';
 import '../CSS/CourseCard.css';
 
 const CourseCard = ({author, title, overview, lessons}) => {
-console.log(lessons)
   return (
     <div>
       <p>{title}</p>

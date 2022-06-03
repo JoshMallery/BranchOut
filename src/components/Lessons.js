@@ -3,7 +3,6 @@ import "../CSS/Lessons.css";
 import LessonCard from './LessonCard'
 
 const Lessons = ({ lessons, selectLesson }) => {
-  console.log("HERE", lessons);
   const lessonComponents = lessons.map(lesson => {
     return (
       <LessonCard {...lesson}
