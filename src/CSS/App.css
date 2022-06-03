@@ -1,7 +1,9 @@
 .App {
   text-align: center;
+  background-size: cover;
   background-color: rgba(38, 213, 255, .15);
-  height: 100vh;
+  height: 100%;
+  overflow-x: hidden;
 }
 
 .App-logo {

@@ -7,8 +7,10 @@ console.log("SLT", selectedLessonTitle);
 
   return (
     <div className='lesson-content'>
-      {selectedLessonTitle}
+      <p className="lesson-title">{selectedLessonTitle}</p>
+      <p className="content-window">
       {selectedLesson}
+      </p>
     </div>
   )
 
