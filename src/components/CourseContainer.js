@@ -13,16 +13,21 @@ class CourseContainer extends Component {
     }
   }
 
+
 componentDidMount = () => {
-  this.setState({lessons:this.props.lessons, courseContent: this.props.overview, title: this.props.title})
+const {title, author, overview, lessons, course_id} = this.props
+  this.setState({lessons:lessons, courseContent:overview, title:title})
 }
 
   render() {
+    const {title, author, overview, lessons, course_id} = this.props
     return(
-      <div>
-        I'm the Course Container Friends!
-        <CourseContent />
-        <Lessons />
+      <div className='course-container'>
+        {title}
+        <div className='course-content'>
+          <CourseContent overview = {overview}/>
+          <Lessons />
+        </div>        
       </div>
     )
   }

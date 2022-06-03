@@ -1,12 +1,9 @@
 import React from "react";
 import "../CSS/CourseContent.css";
 
-const CourseContent = () => {
-
+const CourseContent = ({ overview }) => {
   return (
-    <div>
-    I am a course!
-    </div>
+    <div>{overview}</div>
   )
 
 }

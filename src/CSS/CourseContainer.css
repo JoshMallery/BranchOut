@@ -1,0 +1,12 @@
+.course-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid black;
+
+}
+
+.course-content {
+  display: flex;
+  border: 3px solid red;
+}

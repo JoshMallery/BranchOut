@@ -1,7 +1,7 @@
 const apiCalls = {
 
   getCourses(){
-    return fetch('http://localhost:3001/api/v1/courses')
+    return fetch('https://frozen-eyrie-58000.herokuapp.com/api/v1/courses')
     .then(res => res.json())
   }
 
