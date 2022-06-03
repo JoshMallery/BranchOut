@@ -29,9 +29,9 @@ selectLesson = (lessonTitle, lessonContent) => {
     const {title, author, overview, lessons, course_id} = this.props
     return(
       <div className='course-container'>
-        {title}
+        <p className="course-title">{title}</p>
         <div className='course-content'>
-          {this.state.selectedLesson === "" ? <h2>{overview} Please Pick a Lesson to Start Your Learning Journey!</h2>:<CourseContent
+          {this.state.selectedLesson === "" ? <h2 className="lesson-content"><div className="content-window"><p className="course-overview">Course Overview: {overview} </p><p>Please Pick a Lesson to Start Your Learning Journey!</p></div></h2>:<CourseContent
             overview={overview}
             selectedLesson={this.state.selectedLesson}
             selectedLessonTitle={this.state.selectedLessonTitle}
