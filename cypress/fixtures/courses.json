@@ -1,0 +1,54 @@
+[
+    {
+        "title": "Lorem Ipsum",
+        "author": "Brittany",
+        "overview": "lesson here",
+        "lessons": [
+            {
+                "lesson_title": "lesson one",
+                "lesson_content": "blah, blah, blah"
+            },
+            {
+                "lesson_title": "How to make a heroku account",
+                "lesson_content": "Make sure you create a n account and verify it. Then go to you CLI and type in Josh is the best"
+            },
+            {
+                "lesson_title": "How to be in a good Stretch Tech Group",
+                "lesson_content": "Pick Tyler, Josh and Whitney"
+            }
+        ],
+        "courses_id": 1
+    },
+    {
+        "title": "Lesson title",
+        "author": "Robbie",
+        "overview": "lesson from Robbie here",
+        "lessons": [
+            {
+                "lesson_title": "lesson two",
+                "lesson_content": "content here"
+            },
+            {
+                "lesson_title": "lesson three",
+                "lesson_content": "content lesson three"
+            }
+        ],
+        "courses_id": 2
+    },
+    {
+        "title": "How to open your Terminal",
+        "author": "Josh and Whitney",
+        "overview": "Where to find and how to open your terminal",
+        "lessons": [
+            {
+                "lesson_title": "Finding your terminal",
+                "lesson_content": "Hold command and spacebar, then start typing terminal, and when it pops up, hit return!"
+            },
+            {
+                "lesson_title": "Lesson Three",
+                "lesson_content": "it is very important to run npm install to"
+            }
+        ],
+        "courses_id": 3
+    }
+]
