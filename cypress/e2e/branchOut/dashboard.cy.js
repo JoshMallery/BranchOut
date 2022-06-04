@@ -30,7 +30,7 @@ describe('Dashboard of BranchOut', () => {
       .should('have.length', 3)
   });
 
-  it('The Second Course should have course Details', () => {
+  it('The second Course should have course Details', () => {
     cy.get('.course-card')
       .eq(1)
       .contains("Lesson title")
@@ -50,10 +50,15 @@ describe('Dashboard of BranchOut', () => {
   });
 
   it('A course should have a delete button', () => {
-    cy.get('.course-card')
+    cy.get('button')
       .eq(1)
-      .get('button')
-      .should('exist')
+  });
+
+  it('Should be able to click Delete button for a lesson', () => {
+    cy.intercept("DELETE", "https://frozen-eyrie-58000.herokuapp.com/api/v1/courses", { fixture: "courses.json" })
+    cy.get('button')
+      .eq(1)
+      .click()
   });
 
   it('Should be able to click a lesson', () => {
@@ -63,9 +68,17 @@ describe('Dashboard of BranchOut', () => {
 
       cy.url()
       .should('eq', 'http://localhost:3000/Lesson-title')
-
   });
 
+
+  it('Should go to the form when the add new course button is clicked', () => {
+    cy.get('a')
+      .eq(1)
+      .click()
+
+    cy.url()
+      .should('eq', 'http://localhost:3000/form')
+  })
 
 
 })
