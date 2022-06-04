@@ -6,7 +6,7 @@ const Lessons = ({ lessons, selectLesson }) => {
   const lessonComponents = lessons.map(lesson => {
     return (
       <LessonCard {...lesson}
-        key={lesson.id}
+        key={lesson.lesson_title}
         selectLesson={selectLesson}
       />
     )

@@ -48,7 +48,7 @@ render() {
         <Route path="/:course" render={({ match }) => {
           return(
             <div>
-              <CourseContainer {...this.displayCourse(match)} />
+              <CourseContainer {...this.displayCourse(match)} match={match} />
             </div>
             )
           }
