@@ -1,0 +1,81 @@
+input{
+  border-radius: 8px;
+  border-radius: 8px;
+  border: .5px solid black;
+  height: 1.3rem;
+  width: 20rem;
+}
+
+.form-page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 85vh;
+}
+
+.basic-fields{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+height: 100%;
+}
+
+.course-input-fields{
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+}
+
+.add-course-form{
+  display:flex;
+  justify-content: center;
+  width: 80%;
+}
+
+.overview-input, .lesson-content-input{
+  height: 20vh;
+  width: 20vw;
+  border-radius: 8px;
+  border: .5px solid black;
+  margin-left: 50px;
+}
+
+.modify-lesson-form{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.modify-lesson-textareas{
+  margin-top: 1rem;
+  width:80%;
+}
+
+.title-input{
+  margin-top: 2rem;
+}
+
+.add-course-hr{
+  width: 8%;
+  margin-top: 0;
+  margin-bottom: 3rem;
+}
+
+.add-course-title,
+.add-lesson-title{
+  margin-bottom: 0;
+}
+
+.add-lesson-title_hr{
+  width:12%;
+  margin-top: 0;
+  margin-bottom: 3rem;
+}
+
+.submit-btn{
+  border-radius: 8px;
+  background-color: #18d7188a;
+  font-size: 14pt;
+}

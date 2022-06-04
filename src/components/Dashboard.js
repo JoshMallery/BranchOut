@@ -3,13 +3,16 @@ import '../CSS/Dashboard.css';
 import { NavLink } from 'react-router-dom';
 import CourseCard from './CourseCard'
 
-const Dashboard = ({courses}) => {
+const Dashboard = ({courses, deleteCourse}) => {
   const allCourses = courses.map(course => {
 
     return(
-      <NavLink className="course-card" to={`/${course.title.split(" ").join("-")}`} key={course.courses_id}>
-        <CourseCard {...course}/>
+      <div key={course.courses_id} className="course-card">
+      <NavLink className="course-card" to={`/${course.title.split(" ").join("-")}`}>
+        <CourseCard {...course} />
       </NavLink>
+      <p>Delete Course: <button onClick={() => deleteCourse(course.courses_id)}><img className="delete-icon" src={require("../images/trash-icon.png")}/></button></p>
+      </div>
     )
   })
   return (
