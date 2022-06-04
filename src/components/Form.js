@@ -62,74 +62,93 @@ clearInputs = () => {
 
   render() {
     return (
-      <div>
-        <form className='form'>
-          <input
-            type='text'
-            placeholder='Title'
-            name='title'
-            value={this.state.title}
-            onChange={(event) => this.onChangeHandler(event)}
-            required
-          />
-          <input
-            type='text'
-            placeholder='Author'
-            name='author'
-            value={this.state.author}
-            onChange={(event) => this.onChangeHandler(event)}
-            required
-          />
-          <input
-            type='text'
-            placeholder='Overview'
-            name='overview'
-            value={this.state.overview}
-            onChange={(event) => this.onChangeHandler(event)}
-            required
-          />
-          <input
-            type='text'
-            placeholder='Lesson Title'
-            name='lesson_title'
-            value={this.state.lesson_title}
-            onChange={(event) => this.onChangeHandler(event)}
-            required
-          />
-          <input
-            type='text'
-            placeholder='Lesson Content'
-            name='lesson_content'
-            value={this.state.lesson_content}
-            onChange={(event) => this.onChangeHandler(event)}
-            required
-          />
-          <button onClick={(event) => this.onClickHandler(event)}> Submit
-          </button>
-        </form>
-        <form>
+      <div className="form-page">
+        <h2 className="add-course-title">Add a Course</h2>
+        <hr className="add-course-hr"/>
+        <section className="course-input-fields">
+          <form className='add-course-form'>
+            <aside className="basic-fields">
+              <input
+                type='text'
+                placeholder='  Course Title'
+                name='title'
+                value={this.state.title}
+                onChange={(event) => this.onChangeHandler(event)}
+                required
+              />
+              <input
+                type='text'
+                placeholder='  Author (Thats you! =)'
+                name='author'
+                value={this.state.author}
+                onChange={(event) => this.onChangeHandler(event)}
+                required
+              />
+              <input
+                type='text'
+                placeholder='  Lesson Title'
+                name='lesson_title'
+                value={this.state.lesson_title}
+                onChange={(event) => this.onChangeHandler(event)}
+                required
+              />
+            </aside>
+            <aside className="course-overview-summary">
+              <textarea
+                wrap="hard"
+                className="overview-input"
+                type='text'
+                placeholder='  Course Overview'
+                name='overview'
+                value={this.state.overview}
+                onChange={(event) => this.onChangeHandler(event)}
+                required
+              />
+              <textarea
+                wrap="hard"
+                className="lesson-content-input"
+                type='text'
+                placeholder='  Lesson Content'
+                name='lesson_content'
+                value={this.state.lesson_content}
+                onChange={(event) => this.onChangeHandler(event)}
+                required
+              />
+            </aside>
+          </form>
+        </section>
+        <button className="submit-btn" onClick={(event) => this.onClickHandler(event)}> Submit </button>
+        <form className="modify-lesson-form">
+          <h2 className="add-lesson-title">Add to Existing Course</h2>
+          <hr className="add-lesson-title_hr"/>
           <DropDown
+            className="dropDown"
             courses={this.state.courses}
             onChangeHandler={this.onChangeHandler}
           />
           <input
+            className="title-input"
+            wrap="hard"
             type='text'
-            placeholder='Lesson Title'
+            placeholder='  Lesson Title'
             name='lesson_title_two'
             value={this.state.lesson_title_two}
             onChange={(event) => this.onChangeHandler(event)}
             required
           />
-          <input
-            type='text'
-            placeholder='Lesson Content'
-            name='lesson_content_two'
-            value={this.state.lesson_content_two}
-            onChange={(event) => this.onChangeHandler(event)}
-            required
-          />
-          <button onClick={(event) => this.onLessonClickHandler(event)}> Submit New Lesson
-          </button>
+          <section className="modify-lesson-textareas">
+            <textarea
+              className="overview-input"
+              wrap="hard"
+              type='text'
+              placeholder='Lesson Content'
+              name='lesson_content_two'
+              value={this.state.lesson_content_two}
+              onChange={(event) => this.onChangeHandler(event)}
+              required
+            />
+          </section>
+          <button className="submit-btn" onClick={(event) => this.onLessonClickHandler(event)}> Submit New Lesson</button>
         </form>
       </div>
     )

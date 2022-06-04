@@ -5,6 +5,10 @@ const apiCalls = {
     .then(res => res.json())
   },
 
+  getCourse() {
+    return fetch('https://frozen-eyrie-58000.herokuapp.com/api/v1/courses')
+  },
+
   postCourse({ title, author, overview, lesson_title, lesson_content }){
     const courseToAdd = {title, author, overview}
     return fetch('https://frozen-eyrie-58000.herokuapp.com/api/v1/courses', {
@@ -28,9 +32,18 @@ const apiCalls = {
       body:JSON.stringify(lessonToAdd)
     })
     .then(res => res.json())
+  },
+
+  deleteCourse(id){
+    return fetch('https://frozen-eyrie-58000.herokuapp.com/api/v1/courses', {
+      method:'DELETE',
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      body:JSON.stringify({id})
+    })
+    .then(res => res.json())
   }
-
-
 }
 
 export {apiCalls}
