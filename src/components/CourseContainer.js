@@ -13,15 +13,17 @@ class CourseContainer extends Component {
       title: "",
       selectedLessonTitle: "",
       selectedLesson: "",
-      loading: true
+      loading: true,
+      errors:false,
     }
   }
 
 
 componentDidMount = () => {
-  Promise.all([apiCalls.getCourses()]).then(res => res)
+  Promise.all([apiCalls.getCourses()])
+  .then(res => res)
   .then(data => {
-    const course = data[0].map(course => {
+    const course = data[0].filter(course => {
       if(this.props.match.params.course.split("-").join(" ") === course.title){
         this.setState({
           lessons: course.lessons,
@@ -30,8 +32,8 @@ componentDidMount = () => {
         })
       }
     })
-
   })
+  .catch(error => this.setState({errors:"Unable to Load Courses, Please try again!", loading: false}))
 }
 
 selectLesson = (lessonTitle, lessonContent) => {
@@ -39,6 +41,7 @@ selectLesson = (lessonTitle, lessonContent) => {
 }
 
   renderCourseView = () => {
+    console.log('Lessons from course container',this.props.lessons)
     return (
       <div className='course-container'>
         <p className="course-title">{this.props.title}</p>
@@ -61,7 +64,8 @@ selectLesson = (lessonTitle, lessonContent) => {
 
     return(
       <>
-        {this.state.loading ? <p>loading</p> : this.renderCourseView()}
+        {this.state.errors && <h3>{this.state.errors}</h3>}
+        {this.state.loading ? <p>Loading</p> : this.renderCourseView()}
       </>
     )
   }
