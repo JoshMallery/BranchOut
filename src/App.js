@@ -16,6 +16,12 @@ class App extends Component {
   }
 
   componentDidMount = () => {
+    console.log("Dragon");
+    apiCalls.getCourses()
+    .then(res => this.setState({courses: res}))
+  }
+
+  updateCourses = () => {
     apiCalls.getCourses()
     .then(res => this.setState({courses: res}))
   }
@@ -33,7 +39,7 @@ render() {
       <Switch>
         <Route exact path="/" render={ () => !this.state.courses.length ? <h2>Loading</h2> : <Dashboard courses={this.state.courses}/> }
         />
-        <Route path="/form" render={ () => <Form /> }
+        <Route path="/form" render={ () => <Form updateCourses={this.updateCourses}/> }
         />
         <Route path="/:course" render={({ match }) => {
           return(

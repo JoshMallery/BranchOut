@@ -4,7 +4,7 @@ import {apiCalls} from '../apiCalls/apiCalls';
 import DropDown from './DropDown'
 
 class Form extends Component {
-  constructor() {
+  constructor({ updateCourses }) {
     super();
     this.state = {
       title: '',
@@ -12,7 +12,10 @@ class Form extends Component {
       overview: '',
       lesson_title: '',
       lesson_content: '',
-      courses: []
+      courses: [],
+      courses_id: null,
+      lesson_title_two: '',
+      lesson_content_two: ''
     }
   }
 
@@ -26,15 +29,35 @@ onClickHandler = (event) => {
   apiCalls.postCourse(this.state)
   .then(() => apiCalls.getCourses())
   .then(res => this.setState({ courses:res }))
+  .then(() => this.props.updateCourses())
   this.clearInputs()
 }
 
 onChangeHandler = (event) => {
+  console.log('name', event.target.name);
+  console.log('value', event.target.value);
   this.setState({[event.target.name]: event.target.value})
 }
 
+onLessonClickHandler = (event) => {
+  event.preventDefault();
+  apiCalls.postLesson(this.state.lesson_title_two, this.state.lesson_content_two, this.state.courses_id)
+  .then(() => apiCalls.getCourses())
+  .then(res => this.setState({ courses:res }))
+  .then(() => this.props.updateCourses())
+  this.clearInputs()
+}
+
 clearInputs = () => {
-  this.setState({ title: '', author: '', overview:'', lesson_title:'', lesson_content:'' });
+  this.setState({ title: '',
+  author: '',
+  overview:'',
+  lesson_title:'',
+  lesson_content:'',
+  courses_id: null,
+  lesson_title_two: '',
+  lesson_content_two: ''
+  });
 }
 
   render() {
@@ -87,24 +110,25 @@ clearInputs = () => {
         <form>
           <DropDown
             courses={this.state.courses}
+            onChangeHandler={this.onChangeHandler}
           />
           <input
             type='text'
             placeholder='Lesson Title'
-            name='lesson_title'
-            value={this.state.lesson_title}
+            name='lesson_title_two'
+            value={this.state.lesson_title_two}
             onChange={(event) => this.onChangeHandler(event)}
             required
           />
           <input
             type='text'
             placeholder='Lesson Content'
-            name='lesson_content'
-            value={this.state.lesson_content}
+            name='lesson_content_two'
+            value={this.state.lesson_content_two}
             onChange={(event) => this.onChangeHandler(event)}
             required
           />
-          <button onClick={(event) => this.onClickHandler(event)}> Submit New Lesson
+          <button onClick={(event) => this.onLessonClickHandler(event)}> Submit New Lesson
           </button>
         </form>
       </div>
