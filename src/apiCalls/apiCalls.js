@@ -3,10 +3,12 @@ const apiCalls = {
   getCourses(){
     return fetch('https://frozen-eyrie-58000.herokuapp.com/api/v1/courses')
     .then(res => res.json())
+    .catch(error => console.log(error))
   },
 
   getCourse() {
     return fetch('https://frozen-eyrie-58000.herokuapp.com/api/v1/courses')
+      .catch(error => console.log(error))
   },
 
   postCourse({ title, author, overview, lesson_title, lesson_content }){
@@ -20,6 +22,7 @@ const apiCalls = {
     })
     .then(res => res.json())
     .then(res => this.postLesson(lesson_title, lesson_content, res[0].id))
+    .catch(error => console.log(error))
   },
 
   postLesson(lesson_title, lesson_content, courses_id){
@@ -32,6 +35,7 @@ const apiCalls = {
       body:JSON.stringify(lessonToAdd)
     })
     .then(res => res.json())
+    .catch(error => console.log(error))
   },
 
   deleteCourse(id){
@@ -43,6 +47,7 @@ const apiCalls = {
       body:JSON.stringify({id})
     })
     .then(res => res.json())
+    .catch(error => console.log(error))
   }
 }
 
