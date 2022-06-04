@@ -80,5 +80,34 @@ describe('Dashboard of BranchOut', () => {
       .should('eq', 'http://localhost:3000/form')
   })
 
+  it.skip('Should display an Error message if Failed to fetch', () => {
+    cy.intercept("GET", "https://frozen-eyrie-58000.herokuapp.com/api/v1/courses", {
+        statusCode: 500,
+        body: {
+        message: 'Server error. Please try again'
+        }
+      })
+
+    cy.visit('http://localhost:3000/')
+    cy.get('h3').should('have.value','Unable to Load Courses, Please try again!')
+
+  });
+
+  it('Should display a 404 message if an invalid url is entered', () => {
+    cy.intercept("GET", "https://frozen-eyrie-58000.herokuapp.com/api/v1/courses/anything", {
+        statusCode: 500,
+        body: {
+        message: 'Server error. Please try again'
+        }
+      })
+
+    cy.visit('http://localhost:3000/anything/wrongtext')
+    cy.get('h2').contains('Looks like you took a wrong turn, click Home to go back!')
+
+  });
+
+
+
+
 
 })
