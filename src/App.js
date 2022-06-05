@@ -18,7 +18,14 @@ class App extends Component {
 
   componentDidMount = () => {
     apiCalls.getCourses()
-    .then(res => this.setState({courses: res}))
+    .then(res => {
+
+        if(!Array.isArray(res)){
+           return this.setState({errors:"Unable to Load Page, Please try again!"})
+        }
+       return this.setState({courses: res})
+
+    })
     .catch(error => this.setState({errors:"Unable to Load Courses, Please try again!"}))
   }
 
@@ -52,7 +59,7 @@ render() {
         <Route exact path="/:course" render={({ match }) => {
           return(
             <div>
-              <CourseContainer {...this.displayCourse(match)} match={match} />
+              {!this.state.courses.find(course => course.title === match.params.course.split("-").join(" ")) ? <h3>Unable to find that Course, Please go home and try again!</h3> : <CourseContainer {...this.displayCourse(match)} match={match} />}
             </div>
             )
           }

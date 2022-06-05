@@ -15,7 +15,7 @@ describe('Add course form', () => {
     cy.get('textarea[name="lesson_content"]').type("hello")
   })
 
-  it("should post", () => {
+  it("should be able to post a lesson", () => {
     cy.intercept("POST", 'https://frozen-eyrie-58000.herokuapp.com/api/v1/courses', [{"id": 4}])
     cy.intercept("POST", 'https://frozen-eyrie-58000.herokuapp.com/api/v1/lessons', "6")
     cy.get('input[name="title"]').type("hello");
@@ -29,6 +29,17 @@ describe('Add course form', () => {
     cy.get('input[name="lesson_title"]').should('have.text', "")
     cy.get('textarea[name="overview"]').should('have.text', "")
     cy.get('textarea[name="lesson_content"]').should('have.text', "")
+  })
+
+  it("should get an Error Message if a field is missing when adding a course", () => {
+    cy.intercept("POST", 'https://frozen-eyrie-58000.herokuapp.com/api/v1/courses', [{"id": 4}])
+    cy.intercept("POST", 'https://frozen-eyrie-58000.herokuapp.com/api/v1/lessons', "6")
+    cy.get('input[name="title"]').type("hello");
+    cy.get('input[name="author"]').type("hello")
+    cy.get('input[name="lesson_title"]').type("hello")
+    cy.get('textarea[name="overview"]').type("hello")
+    cy.get(".submit-btn").eq(0).click()
+    cy.get('h3').contains("Please fill out all course and lesson sections before submitting!")
   })
 })
 
@@ -47,9 +58,9 @@ describe('Add lesson form', () => {
     cy.get('textarea[name="lesson_content_two"]').type("hello")
   })
 
-  it("should let you add to a course", () => {
+  it("should let you add a lesson to a course", () => {
     cy.intercept("POST", 'https://frozen-eyrie-58000.herokuapp.com/api/v1/lessons', [{"id": 5}])
-    cy.get('select').select(0);
+    cy.get('select').select(1);
     cy.get('input[name="lesson_title_two"]').type("hello")
     cy.get('textarea[name="lesson_content_two"]').type("hello")
     cy.get(".submit-btn").eq(1).click()
@@ -57,6 +68,16 @@ describe('Add lesson form', () => {
     cy.get('input[name="lesson_title_two"]').should('have.text', "")
     cy.get('textarea[name="lesson_content_two"]').should('have.text', "")
   })
+
+  it("should give you an error message if you are missing a field to add a lesson", () => {
+    cy.intercept("POST", 'https://frozen-eyrie-58000.herokuapp.com/api/v1/lessons', [{"id": 5}])
+    cy.get('select').select(1);
+    cy.get('input[name="lesson_title_two"]').type("hello")
+    cy.get(".submit-btn").eq(1).click()
+    cy.get('h3').contains("Please fill out all lesson sections before submitting!")
+  })
+
+
 })
 
 
