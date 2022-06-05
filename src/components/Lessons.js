@@ -13,7 +13,7 @@ const Lessons = ({ lessons, selectLesson }) => {
   })
   return(
 
-    <div className='lessonContainer'>
+    <div className='lesson-container'>
     {lessonComponents}
     </div>
   )
