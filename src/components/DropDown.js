@@ -12,7 +12,7 @@ const DropDown = ({ courses, onChangeHandler }) => {
 return (
   <div>
     <label>
-    Choose a Course to Modify
+    Choose a Course to Modify: &nbsp; &nbsp;
       <select name='courses_id' onChange={(event) => onChangeHandler(event)}>
         {dropDownOptions}
       </select>

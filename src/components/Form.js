@@ -119,7 +119,7 @@ clearInputs = () => {
         </section>
         <button className="submit-btn" onClick={(event) => this.onClickHandler(event)}> Submit </button>
         <form className="modify-lesson-form">
-          <h2 className="add-lesson-title">Add to Existing Course</h2>
+          <h2 className="add-lesson-title">Add a Lesson to an Existing Course</h2>
           <hr className="add-lesson-title_hr"/>
           <DropDown
             className="dropDown"
