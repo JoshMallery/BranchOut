@@ -8,10 +8,10 @@ const NavBar = () => {
     <div className='nav-bar'>
       <img className="logo" src={require('../images/official-logo.png')}/>
       <div className="navBar-link">
-        <NavLink exact to="/">
+        <NavLink className="nav-btn" exact to="/">
           Home
          </NavLink>
-         <NavLink to="/form">
+         <NavLink className="nav-btn" to="/form">
            Add New Course
           </NavLink>
       </div>

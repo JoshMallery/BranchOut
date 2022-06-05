@@ -11,7 +11,7 @@ const Dashboard = ({courses, deleteCourse}) => {
       <NavLink className="course-contents" to={`/${course.title.split(" ").join("-")}`}>
         <CourseCard {...course} />
       </NavLink>
-      <p>Delete Course: <button onClick={() => deleteCourse(course.courses_id)}><img className="delete-icon" src={require("../images/trash-icon.png")}/></button></p>
+      <p>Delete Course: <button className="delete-btn" onClick={() => deleteCourse(course.courses_id)}><img className="delete-icon" src={require("../images/trash-icon.png")}/></button></p>
       </div>
     )
   })

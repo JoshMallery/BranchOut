@@ -1,7 +1,12 @@
-.lesson-card{
+.lesson-card {
   background-color: #F4F4F4;
   border-radius: 8px;
-  box-shadow: 2px 12px 20px 0px #4e4646;
+  box-shadow: 0px 7px 20px 0px #4e4646;
   width: 90%;
   margin-top: 1.5rem;
+}
+
+.lesson-card:hover {
+  cursor: pointer;
+  box-shadow: 2px 12px 20px 0px #4e4646;
 }

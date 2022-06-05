@@ -26,3 +26,12 @@
   width: 100vw;
   height: 80vh;
 }
+
+
+.delete-icon{
+  width: 1rem;
+}
+
+.delete-btn:hover{
+  box-shadow: 2px 12px 20px 0px red;
+}

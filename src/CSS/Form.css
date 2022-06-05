@@ -6,6 +6,15 @@ input{
   width: 20rem;
 }
 
+select {
+  text-align: center;
+  width: 200px;
+}
+
+select:hover {
+  cursor: pointer;
+}
+
 .form-page{
   display: flex;
   flex-direction: column;
@@ -32,12 +41,20 @@ height: 100%;
   width: 80%;
 }
 
-.overview-input, .lesson-content-input{
+.overview-input {
   height: 20vh;
   width: 20vw;
   border-radius: 8px;
   border: .5px solid black;
   margin-left: 50px;
+  margin-right:50px;
+}
+
+.lesson-content-input {
+  height: 20vh;
+  width: 20vw;
+  border-radius: 8px;
+  border: .5px solid black;
 }
 
 .modify-lesson-form{
@@ -69,7 +86,7 @@ height: 100%;
 }
 
 .add-lesson-title_hr{
-  width:12%;
+  width:20.5%;
   margin-top: 0;
   margin-bottom: 3rem;
 }
@@ -78,4 +95,9 @@ height: 100%;
   border-radius: 8px;
   background-color: #18d7188a;
   font-size: 14pt;
+}
+
+.submit-btn:hover {
+  cursor: pointer;
+  box-shadow: 2px 6px 6px 0px #4e4646;
 }

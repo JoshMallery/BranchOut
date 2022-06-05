@@ -15,7 +15,9 @@ class Form extends Component {
       courses: [],
       courses_id: null,
       lesson_title_two: '',
-      lesson_content_two: ''
+      lesson_content_two: '',
+      course_errors: false,
+      lesson_errors: false
     }
   }
 
@@ -26,11 +28,26 @@ componentDidMount = () => {
 
 onClickHandler = (event) => {
   event.preventDefault();
+
+
+  if( Object.keys(this.state).find((stateItem,index) => {
+      if(index <= 4) {
+          return  !this.state[stateItem]
+    }
+  })) {
+
+    this.setState({course_errors:"Please fill out all course and lesson sections before submitting!", loading: false})
+      return
+  } else {
+
+  this.setState({course_errors: false})
+
   apiCalls.postCourse(this.state)
   .then(() => apiCalls.getCourses())
   .then(res => this.setState({ courses:res }))
   .then(() => this.props.updateCourses())
   this.clearInputs()
+  }
 }
 
 onChangeHandler = (event) => {
@@ -41,11 +58,27 @@ onChangeHandler = (event) => {
 
 onLessonClickHandler = (event) => {
   event.preventDefault();
+
+
+  if( Object.keys(this.state).find((stateItem,index) => {
+      if(index > 5 && index < 9 ) {
+          return  !this.state[stateItem]
+    }
+  })) {
+
+    this.setState({lesson_errors:"Please fill out all lesson sections before submitting!", loading: false})
+      return
+  } else {
+
+  this.setState({lesson_errors: false})
+
   apiCalls.postLesson(this.state.lesson_title_two, this.state.lesson_content_two, this.state.courses_id)
   .then(() => apiCalls.getCourses())
   .then(res => this.setState({ courses:res }))
   .then(() => this.props.updateCourses())
   this.clearInputs()
+  }
+
 }
 
 clearInputs = () => {
@@ -56,7 +89,8 @@ clearInputs = () => {
   lesson_content:'',
   courses_id: null,
   lesson_title_two: '',
-  lesson_content_two: ''
+  lesson_content_two: '',
+  errors:false
   });
 }
 
@@ -118,9 +152,11 @@ clearInputs = () => {
           </form>
         </section>
         <button className="submit-btn" onClick={(event) => this.onClickHandler(event)}> Submit </button>
+        {this.state.course_errors && <h3>{this.state.course_errors}</h3>}
         <form className="modify-lesson-form">
-          <h2 className="add-lesson-title">Add to Existing Course</h2>
+          <h2 className="add-lesson-title">Add a Lesson to an Existing Course</h2>
           <hr className="add-lesson-title_hr"/>
+          {this.state.lesson_errors && <h3>{this.state.lesson_errors}</h3>}
           <DropDown
             className="dropDown"
             courses={this.state.courses}

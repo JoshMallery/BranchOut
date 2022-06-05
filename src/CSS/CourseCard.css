@@ -11,11 +11,3 @@
 .course-card:hover{
   cursor: pointer;
 }
-
-.delete-icon{
-  width: 1rem;
-}
-
-button:hover{
-  box-shadow: 2px 12px 20px 0px red;
-}

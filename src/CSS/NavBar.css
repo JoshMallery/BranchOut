@@ -1,18 +1,36 @@
-.nav-bar{
+.nav-bar {
   background-color: #8EB0FF;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
 }
 
-.logo{
+.logo {
   height: 17vh;
   margin-left: 1vw;
 }
 
-.navBar-link{
+.navBar-link {
   margin-right: 1vw;
   width: 20vw;
   display: flex;
   justify-content: space-around;
+}
+
+.active {
+  visibility: hidden;
+}
+
+.nav-btn {
+  background-color: rgba(223 249 255);
+  color: black;
+  text-decoration: none;
+  padding:10px;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.nav-btn:hover {
+  text-decoration: underline;
+  text-decoration-color: #8EB0FF;
+  text-decoration-thickness: 5px;
 }

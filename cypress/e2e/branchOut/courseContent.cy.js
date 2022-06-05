@@ -21,7 +21,7 @@ describe('Course Content of BranchOut', () => {
   });
 
   it('Should have 3 lessons', () => {
-    cy.get('.lessonContainer').children()
+    cy.get('.lesson-container').children()
     .should('have.length', 3)
   });
 
