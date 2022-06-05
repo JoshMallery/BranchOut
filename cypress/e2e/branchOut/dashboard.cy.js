@@ -80,7 +80,7 @@ describe('Dashboard of BranchOut', () => {
       .should('eq', 'http://localhost:3000/form')
   })
 
-  it.skip('Should display an Error message if Failed to fetch', () => {
+  it('Should display an Error message if Failed to fetch', () => {
     cy.intercept("GET", "https://frozen-eyrie-58000.herokuapp.com/api/v1/courses", {
         statusCode: 500,
         body: {
@@ -89,11 +89,25 @@ describe('Dashboard of BranchOut', () => {
       })
 
     cy.visit('http://localhost:3000/')
-    cy.get('h3').should('have.value','Unable to Load Courses, Please try again!')
+    cy.get('h3').contains('Unable to Load Page, Please try again!')
 
   });
 
-  it('Should display a 404 message if an invalid url is entered', () => {
+  it('Should display a 404 message if an invalid course URL is entered', () => {
+    cy.intercept("GET", "https://frozen-eyrie-58000.herokuapp.com/api/v1/courses/anything", {
+        statusCode: 500,
+        body: {
+        message: 'Server error. Please try again'
+        }
+      })
+
+    cy.visit('http://localhost:3000/anything')
+    cy.get('h3').contains('Unable to find that Course, Please go home and try again!')
+
+  });
+
+
+  it('Should display a 404 message if an invalid URL is entered', () => {
     cy.intercept("GET", "https://frozen-eyrie-58000.herokuapp.com/api/v1/courses/anything", {
         statusCode: 500,
         body: {

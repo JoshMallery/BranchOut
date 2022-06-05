@@ -69,4 +69,17 @@ describe('Course Content of BranchOut', () => {
     .should('eq', 'http://localhost:3000/form')
   })
 
+  it('Should display a 404 message if an invalid course URL is entered', () => {
+    cy.intercept("GET", "https://frozen-eyrie-58000.herokuapp.com/api/v1/courses/anything", {
+        statusCode: 500,
+        body: {
+        message: 'Server error. Please try again'
+        }
+      })
+
+    cy.visit('http://localhost:3000/anything')
+    cy.get('h3').contains('Unable to find that Course, Please go home and try again!')
+
+  });
+
 })
