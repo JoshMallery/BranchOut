@@ -103,5 +103,12 @@ height: 100%;
 }
 
 .course-error-msg {
-  margin-bottom: -40px;
+  margin-bottom: -40.5px;
+  color: red;
+}
+
+.lesson-error-msg {
+  margin-top: -40px;
+  margin-bottom: 18px;
+  color: red;
 }

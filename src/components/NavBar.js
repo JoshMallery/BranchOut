@@ -1,12 +1,14 @@
 import React from 'react';
 import '../CSS/NavBar.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 
 const NavBar = () => {
   return (
     <div className='nav-bar'>
-      <img className="logo" src={require('../images/official-logo.png')}/>
+    <Link to="/">
+      <img className="logo" alt="Branchout Logo" src={require('../images/official-logo.png')}/>
+    </Link>
       <div className="navBar-link">
         <NavLink className="nav-btn" exact to="/">
           Home
