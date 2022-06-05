@@ -64,6 +64,7 @@ selectLesson = (lessonTitle, lessonContent) => {
 
     return(
       <>
+
         {this.state.errors && <h3>{this.state.errors}</h3>}
         {this.state.loading ? <p>Loading</p> : this.renderCourseView()}
       </>
