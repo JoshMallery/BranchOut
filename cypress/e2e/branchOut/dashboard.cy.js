@@ -15,9 +15,9 @@ describe('Dashboard of BranchOut', () => {
   });
 
   it('Should have a button to add a Course', () => {
-    cy.get('a').eq(1)
+    cy.get('a').eq(2)
       .invoke('attr', 'href')
-      .should('eq', '/form')
+      .should('eq', '/branchOut/form')
   });
 
   it('Should have Dashboard as the title', () => {
@@ -67,7 +67,7 @@ describe('Dashboard of BranchOut', () => {
       .click()
 
       cy.url()
-      .should('eq', 'http://localhost:3000/Lesson-title')
+      .should('eq', 'http://localhost:3000/branchOut/Lesson-title')
   });
 
 
@@ -77,7 +77,7 @@ describe('Dashboard of BranchOut', () => {
       .click()
 
     cy.url()
-      .should('eq', 'http://localhost:3000/form')
+      .should('eq', 'http://localhost:3000/branchOut/form')
   })
 
   it('Should display an Error message if Failed to fetch', () => {
@@ -88,7 +88,7 @@ describe('Dashboard of BranchOut', () => {
         }
       })
 
-    cy.visit('http://localhost:3000/')
+    cy.visit('http://localhost:3000/branchOut/')
     cy.get('h3').contains('Unable to Load Page, Please try again!')
 
   });
@@ -101,7 +101,7 @@ describe('Dashboard of BranchOut', () => {
         }
       })
 
-    cy.visit('http://localhost:3000/anything')
+    cy.visit('http://localhost:3000/branchOut/anything')
     cy.get('h3').contains('Unable to find that Course, Please go home and try again!')
 
   });
@@ -115,7 +115,7 @@ describe('Dashboard of BranchOut', () => {
         }
       })
 
-    cy.visit('http://localhost:3000/anything/wrongtext')
+    cy.visit('http://localhost:3000/branchOut/anything/wrongtext')
     cy.get('h2').contains('Looks like you took a wrong turn, click Home to go back!')
 
   });

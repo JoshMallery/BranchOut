@@ -46,27 +46,27 @@ describe('Course Content of BranchOut', () => {
   });
 
   it('Should have a home button', () => {
-    cy.get('a').eq(0)
+    cy.get('a').eq(1)
       .invoke('attr', 'href')
-      .should('eq', '/')
+      .should('eq', '/branchOut/')
   });
 
   it('Should go home when the home button is clicked', () => {
-    cy.get('a').eq(0).click()
+    cy.get('a').eq(1).click()
     cy.url()
-    .should('eq', 'http://localhost:3000/')
+    .should('eq', 'http://localhost:3000/branchOut/')
   });
 
   it('Should have a button to add a Course', () => {
-    cy.get('a').eq(1)
+    cy.get('a').eq(2)
       .invoke('attr', 'href')
-      .should('eq', '/form')
+      .should('eq', '/branchOut/form')
   });
 
   it('Should go to the form when the add new course button is clicked', () => {
-    cy.get('a').eq(1).click()
+    cy.get('a').eq(2).click()
     cy.url()
-    .should('eq', 'http://localhost:3000/form')
+    .should('eq', 'http://localhost:3000/branchOut/form')
   })
 
   it('Should display a 404 message if an invalid course URL is entered', () => {
