@@ -101,3 +101,14 @@ height: 100%;
   cursor: pointer;
   box-shadow: 2px 6px 6px 0px #4e4646;
 }
+
+.course-error-msg {
+  margin-bottom: -40.5px;
+  color: red;
+}
+
+.lesson-error-msg {
+  margin-top: -40px;
+  margin-bottom: 18px;
+  color: red;
+}

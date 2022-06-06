@@ -23,7 +23,7 @@ componentDidMount = () => {
   Promise.all([apiCalls.getCourses()])
   .then(res => res)
   .then(data => {
-    const course = data[0].filter(course => {
+    data[0].forEach(course => {
       if(this.props.match.params.course.split("-").join(" ") === course.title){
         this.setState({
           lessons: course.lessons,
@@ -41,7 +41,6 @@ selectLesson = (lessonTitle, lessonContent) => {
 }
 
   renderCourseView = () => {
-    console.log('Lessons from course container',this.props.lessons)
     return (
       <div className='course-container'>
         <p className="course-title">{this.props.title}</p>

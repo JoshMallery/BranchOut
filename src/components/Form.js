@@ -51,8 +51,6 @@ onClickHandler = (event) => {
 }
 
 onChangeHandler = (event) => {
-  console.log('name', event.target.name);
-  console.log('value', event.target.value);
   this.setState({[event.target.name]: event.target.value})
 }
 
@@ -152,11 +150,11 @@ clearInputs = () => {
           </form>
         </section>
         <button className="submit-btn" onClick={(event) => this.onClickHandler(event)}> Submit </button>
-        {this.state.course_errors && <h3>{this.state.course_errors}</h3>}
+        {this.state.course_errors && <h3 className="course-error-msg">{this.state.course_errors}</h3>}
         <form className="modify-lesson-form">
           <h2 className="add-lesson-title">Add a Lesson to an Existing Course</h2>
           <hr className="add-lesson-title_hr"/>
-          {this.state.lesson_errors && <h3>{this.state.lesson_errors}</h3>}
+          {this.state.lesson_errors && <h3 className="lesson-error-msg">{this.state.lesson_errors}</h3>}
           <DropDown
             className="dropDown"
             courses={this.state.courses}
