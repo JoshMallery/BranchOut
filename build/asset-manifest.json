@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/BranchOut/static/css/main.3567777e.css",
+    "main.js": "/BranchOut/static/js/main.46285d6a.js",
+    "static/js/787.945951c2.chunk.js": "/BranchOut/static/js/787.945951c2.chunk.js",
+    "static/media/trash-icon.png": "/BranchOut/static/media/trash-icon.a6fd29509719f079bfd7.png",
+    "index.html": "/BranchOut/index.html",
+    "main.3567777e.css.map": "/BranchOut/static/css/main.3567777e.css.map",
+    "main.46285d6a.js.map": "/BranchOut/static/js/main.46285d6a.js.map",
+    "787.945951c2.chunk.js.map": "/BranchOut/static/js/787.945951c2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3567777e.css",
+    "static/js/main.46285d6a.js"
+  ]
+}

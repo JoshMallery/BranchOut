@@ -1,6 +1,6 @@
-# Rancid Tomatillos
+# branchOut
 
-### Paired Project
+### Group Project
 
 ## Overview
 
@@ -8,18 +8,18 @@ Not sure what movie to watch tonight? Want to find out if it's any good? You nee
 
 The Rancid Tomatillos Web App, built in React, displays some of the newest films out there! Rancid Tomatillos features an easy to use interface that shows the movie rating on any movie poster. Once hovering over a movie poster the movie title and release year are available as well. If you then click a movie poster a movie synopsis/overview is available about the film along with additional movie details like genre and even a Trailer of the film!
 
-### [Rancid Tomatillos Deploy Link](https://joshmallery.github.io/rancid-tomatillos/)
+### [branchOut Deploy Link](https://joshmallery.github.io/rancid-tomatillos/)
 
 ## Project Views
 
-### Home Page and Movie Page:
-![Rancid Tomatillos](https://user-images.githubusercontent.com/3982238/169899057-16d84903-e0cb-4a3c-a8e0-31145701daaa.gif)
+### Home View with Dashboard Page:
+![Dashboard](https://user-images.githubusercontent.com/3982238/169899057-16d84903-e0cb-4a3c-a8e0-31145701daaa.gif)
 
-### Search Feature:
-![Search Feature](https://user-images.githubusercontent.com/3982238/169898956-aceda13c-0c5f-4a9c-abef-b85ad8521cbe.gif)
+### View a Course and Lesson:
 
-### Error Handling:
-![Error Handling](https://user-images.githubusercontent.com/3982238/169899014-003c0582-8871-48b5-8aa6-7e45e3deeed4.gif)
+
+### Add a Form:
+![Add Form](https://user-images.githubusercontent.com/3982238/169899014-003c0582-8871-48b5-8aa6-7e45e3deeed4.gif)
 
 ## React
 
@@ -39,20 +39,20 @@ The Rancid Tomatillos Web App, built in React, displays some of the newest films
 
 - From the repo click the code button and copy the SSH link.
 - Open terminal by pressing command + space bar, and search for terminal
-- Inside of your terminal type `git clone` and then paste the ssh link. It should look like this: [git@github.com:JoshMallery/rancid-tomatillos.git](git@github.com:JoshMallery/rancid-tomatillos.git)
-- In your terminal type `cd rancid-tomatillos`
+- Inside of your terminal type `git clone` and then paste the ssh link. It should look like this: [git@github.com:JoshMallery/BranchOut.git](git@github.com:JoshMallery/BranchOut.git)
+- In your terminal type `cd branchOut`
 - Type `npm install`
 - Do not run `npm audit fix --force`
 - Then type `npm start` This runs the app in the development mode.
 - Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 - The browser should then deploy using a local host
-- Enjoy using Rancid Tomatillos!
+- Enjoy using branchOut!
 
 - NOTE: Make sure that you type `Control + C` in your terminal when you are done using the application. This ensure the server will stop running before your close your Terminal.
 
 ## Instructions for Use
 
-- On opening the browser, a user is free to scroll the displayed movies!
+- On opening the browser, a user is free to scroll the current courses that exist!
 - A user can hover over a movie poster for title and release year.
 - A user can click a movie poster and get additional movie details including a trailer to help them make their decision on what to watch.
 - A user can also search for a movie title in the search bar and click on the results.
@@ -67,30 +67,37 @@ The Rancid Tomatillos Web App, built in React, displays some of the newest films
 - Fetch Web API
 - Cypress Testing
 - GET requests
+- POST requests
+- Delete requests
 
 ## Future Features
 
-- Adding a responsive layout for mobile and varying device screen sizes
+- User Login Page for Teachers or Students
+- Teacher and Student User Permissions, Student - read-only access
 
 ## Project management
 
-- We used a [Github Project Board](https://github.com/Abumpus1/rancid-tomatillos/projects/1) stay on task and meet the deadline.
-- The project specs and guideline for this project can be found [here](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html)
+- We used a [Github Project Board](https://github.com/JoshMallery/BranchOut/projects/1) stay on task and meet the deadlines.
 
 ### Figma WireFrame
-![WireFrame](https://user-images.githubusercontent.com/3982238/169900629-0b2275e9-450b-4562-9b5f-e57899ac3bf6.png)
+![DashboardView](https://user-images.githubusercontent.com/96563007/172260248-35226b8f-aee1-4b84-84eb-6a80c3ea589f.png)
+
+![LessonView](https://user-images.githubusercontent.com/96563007/172260380-1f6bcde7-ddba-460b-a902-906adc0512f2.png)
+
 
 ### Figma Component Architecture
-<img src="https://user-images.githubusercontent.com/3982238/169900666-874b3332-0fd9-4155-a661-a86a226e6ae4.png" width="650" alt="Component Architecture">
+
+![Data Structure](https://user-images.githubusercontent.com/96563007/172260578-13a529f1-48ab-436f-870b-bb63c76fa7e3.png)
 
 ## Contributors
 
-- [Alex Bumpus](https://github.com/Abumpus1)
 - [Josh Mallery](https://github.com/JoshMallery)
+- [Tyler Tedesco](https://github.com/sted1994)
+- [Whitney Perricone](https://github.com/Wperricone)
 
 ## Image Credit
 
-- Specialty icons created by [Freepik-Flaticon](https://www.flaticon.com/authors/freepik)
+- branchOut logo created by [Freelogodesign.org](https://www.freelogodesign.org/)
 
 ------------------------------------
 
