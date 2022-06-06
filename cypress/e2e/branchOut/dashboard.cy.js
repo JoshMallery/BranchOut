@@ -73,7 +73,7 @@ describe('Dashboard of BranchOut', () => {
 
   it('Should go to the form when the add new course button is clicked', () => {
     cy.get('a')
-      .eq(1)
+      .eq(2)
       .click()
 
     cy.url()
@@ -88,7 +88,7 @@ describe('Dashboard of BranchOut', () => {
         }
       })
 
-    cy.visit('http://localhost:3000/branchOut/')
+    cy.visit('http://localhost:3000/')
     cy.get('h3').contains('Unable to Load Page, Please try again!')
 
   });
