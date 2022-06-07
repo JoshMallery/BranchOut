@@ -91,14 +91,14 @@ describe("Test external page links", () => {
   });
 
   it('Should have a home button', () => {
-    cy.get('a').eq(0)
+    cy.get('a').eq(1)
       .invoke('attr', 'href')
-      .should('eq', '/')
+      .should('eq', '/branchOut/')
   });
 
   it('Should go home when the home button is clicked', () => {
-    cy.get('a').eq(0).click()
+    cy.get('a').eq(1).click()
     cy.url()
-    .should('eq', 'http://localhost:3000/')
+    .should('eq', 'http://localhost:3000/branchOut/')
   })
 })
