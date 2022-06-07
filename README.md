@@ -12,14 +12,13 @@ If you are an instructor who struggles with an endless amount of paper documents
 
 ## Project Views
 
-### Home View with Dashboard Page:
-![Dashboard]()
-
-### View a Course and Lesson:
-
+### Dashboard with Course and Lesson Views:
+![Dashboard and Course gif](https://user-images.githubusercontent.com/96563007/172274866-e662238f-11ad-4956-9412-d739de0b1d55.gif)
 
 ### Add a Form:
-![Add Form]()
+![Form Errors](https://user-images.githubusercontent.com/96563007/172274890-ab541712-33cb-489e-a05f-e759afd28491.gif)
+
+
 
 ## React
 
