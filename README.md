@@ -81,8 +81,7 @@ If you are an instructor who struggles with an endless amount of paper documents
 ### Figma WireFrame
 ![DashboardView](https://user-images.githubusercontent.com/96563007/172260248-35226b8f-aee1-4b84-84eb-6a80c3ea589f.png)
 
-![LessonView](https://user-images.githubusercontent.com/96563007/172260380-1f6bcde7-ddba-460b-a902-906adc0512f2.png)
-
+![LessonView](https://user-images.githubusercontent.com/26700819/172275259-ebc9f658-f1eb-4773-a391-da38fcabcd87.png)
 
 ## Contributors
 
